@@ -18,7 +18,7 @@ if [ $INDEX -le 0 ]; then
     mongosh --host $MONGODB_HOST </app/db/master-data.js
     VALIDATE $? "Loading products"
 else
-    echo -e "Products already loaded ... $Y SKIPPING $N"
+    echo -e "$(date "+%Y-%m-%d %H:%M:%S") | Products already loaded ... $Y SKIPPING $N"
 fi
 
 systemctl restart $app_name
